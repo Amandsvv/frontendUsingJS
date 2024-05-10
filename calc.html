@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body{
+            background-color: rgb(255, 255, 255);
+        }
+        .calc{
+            height:300px;
+            width:300px;
+
+            margin:50px auto;
+
+            background-color: black;
+
+            padding-top:20px ;
+            text-align: center;
+
+            border-radius: 20px;
+        }
+        .display{
+            height: 50px;
+            width:80%;
+
+            background-color: transparent;
+            border: none;
+            font-size: 20px;
+
+            color: white;
+            font-weight: bold;
+        }
+        .css-button{
+            font-family: Arial, Helvetica, sans-serif;
+            height: 50px;
+            width: 50px;
+
+            border-radius: 25px;
+
+            background-color: gray;
+            border: none;
+
+            font-size: 18px;
+            font-weight: bold;
+
+            margin-top: 5px;
+            margin-left:5px;
+        }
+        .operator{
+            background-color: rgb(255, 68, 0);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="calc">
+        <input type="text" class="display"><br>
+
+        <input type="button" class="css-button" value="7" onclick="addToDisplay(value)">
+        <input type="button" class="css-button" value="8" onclick="addToDisplay(value)">
+        <input type="button" class="css-button" value="9" onclick="addToDisplay(value)">
+        <input type="button" class="css-button operator" value="/" onclick="addToDisplay(value)">
+        <br>
+
+        <input type="button" class="css-button" value="4" onclick="addToDisplay(value)">
+        <input type="button" class="css-button" value="5" onclick="addToDisplay(value)">
+        <input type="button" class="css-button" value="6" onclick="addToDisplay(value)">
+        <input type="button" class="css-button operator" value="*" onclick="addToDisplay(value)">
+        <br>
+
+        <input type="button" class="css-button" value="1" onclick="addToDisplay(value)">
+        <input type="button" class="css-button" value="2" onclick="addToDisplay(value)">
+        <input type="button" class="css-button" value="3" onclick="addToDisplay(value)">
+        <input type="button" class="css-button operator" value="-" onclick="addToDisplay(value)">
+        <br>
+
+        <input type="button" class="css-button clear" value="C" onclick="clearDisplay()">
+        <input type="button" class="css-button" value="." onclick="addToDisplay(value)">
+        <input type="button" class="css-button operator" value="=" onclick="calculate()">
+        <input type="button" class="css-button operator" value="+" onclick="addToDisplay(value)">
+    </div>
+
+    <script>
+        
+        function addToDisplay(value) {
+            document.querySelector(".display").value += value;
+        }
+
+        function calculate() {
+            const result = eval(document.querySelector(".display").value);
+            document.querySelector(".display").value = result;
+        }
+
+        function clearDisplay() {
+            document.querySelector(".display").value = "";
+        }
+      
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock |Paper |Scissor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div>
+        <h1>Rock |Paper |Scissor</h1>
+        <h2>Make Your Move</h2>
+        <button id="Rock" onclick="let value = 'Rock';
+        myFunction(value)" class="move-btn"><img src="image/Rock.png" alt="Rock" class="move-img"></button>
+
+        <button onclick="let value2 = 'Paper';
+        myFunction(value2)" class="move-btn"><img src="image/Paper.png" alt="Paper" class="move-img"></button>
+
+        <button onclick="let value3 = 'Scissor';
+        myFunction(value3)" class="move-btn"><img src="image/Scissor.png" alt="Scissor" class="move-img"></button><br>
+        
+
+        <button class="reset-score-button" onclick="
+            score.wins = 0;
+            score.tie = 0;
+            score.losses = 0; 
+            localStorage.removeItem('score');
+            document.querySelector('.js-result').innerHTML='';
+            document.querySelector('.js-move').innerHTML='';
+            document.querySelector('.js-score').innerHTML='';
+            ">Reset Score
+        </button>
+
+        <p class="js-result result"></p>
+        <p class="js-move css-move"></p>
+        <p class="js-score"></p>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

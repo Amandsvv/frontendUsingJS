@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess The Number</title>
+
+    <style>
+        body{
+            background-color: rgb(255, 214, 233);
+        }
+        .main-board{
+            background-color: rgb(0, 0, 0);
+
+            height:200px;
+            width:400px;
+            text-align: center;
+            color: rgb(33, 255, 12);
+
+            padding-top: 30px;
+            border-radius: 30px;
+
+            margin: 20vh auto;
+            box-shadow: 2px 2px 10px rgba(120, 120, 120, 0.3);
+        }
+        .js-input{
+            padding: 5px 10px;
+            font-size :14px;
+
+            border-radius: 5px;
+            border: none;
+        }
+        .js-input:focus{
+            outline: none;
+        }
+        #entr{
+            padding: 5px 10px;
+            font-size :13px;
+
+            border-radius: 5px;
+            border: none;
+
+            margin-left:5px ;
+        }
+        .result{
+            font-size: 14px;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-board">
+        <h1 class="heading">Guess the number</h1>
+        <p class="para">Pick a number between 0 to 9</p>
+        <input type="text" class="js-input">
+        <button id="entr">Enter</button>
+        <p class="result"></p>
+    </div>
+    <script>
+        document.getElementById("entr").addEventListener('click', () => {
+            let value = Number(document.querySelector(".js-input").value);
+            let result = document.querySelector('.result');
+
+            if (value >=0 && value <= 9) {
+                let randomNumber = Math.floor(Math.random()*10);
+                    if(value === randomNumber){
+                        result.innerHTML = 'You win';
+                    }
+                    else{
+                        result.innerHTML = `You loose <br> Computer picked : <b>${randomNumber}</b>`;
+                    }
+            }
+            else if (value> 9 && typeof value == 'number') {
+                result.innerHTML = 'Enter one digit number';
+            } else {
+                result.innerHTML = 'Please enter a valid number !';
+            }
+            document.querySelector('.js-input').innerHTML ='';
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rupees Calculator |Binding + Print</title>
+</head>
+<body>
+    <h1>Enter pages of your one File</h1>
+    <input type="text" class="filePage">
+    <button class="entr">Enter</button>
+    <p class="ruppes"></p>
+
+    <script>
+        document.querySelector('.entr').addEventListener('click',() => {
+                let page = Number(document.querySelector('.filePage').value);
+                let bindingPrice = 0;
+                if(page <= 55){
+                    bindingPrice = 40;
+                }
+                else{
+                    bindingPrice = 50;
+                }
+                let totalprice = 5 + bindingPrice + ((page-1)*1.5);
+                document.querySelector('.ruppes').innerHTML = `Rs. ${totalprice}`;
+        });
+    </script>
+</body>
+</html>

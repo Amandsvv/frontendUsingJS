@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rando Color Picker</title>
+    <style>
+        div{
+            height: 60px;
+            width: 100px;
+            margin-top:10px;
+
+            text-align: center;
+            padding-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        Box 1
+    </div>
+
+    <div class="box2">
+        Box 2
+    </div>
+
+    <div class="box3">
+        Box 3
+    </div>
+
+    <div class="box4">
+        Box 4
+    </div>
+
+    <script>
+
+        function getColor(){
+            let red = Math.floor(Math.random()*256);
+            let green = Math.floor(Math.random()*256);
+            let blue = Math.floor(Math.random()*256);
+
+            return `rgb(${red},${green},${blue})`;
+        }
+
+
+            document.querySelector(".box1").style.backgroundColor = getColor();
+            document.querySelector(".box2").style.backgroundColor =getColor();
+            document.querySelector(".box3").style.backgroundColor =getColor();
+            document.querySelector(".box4").style.backgroundColor =getColor();
+    </script>
+</body>
+</html>
